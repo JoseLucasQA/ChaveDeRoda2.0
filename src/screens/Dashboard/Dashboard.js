@@ -42,7 +42,7 @@ export default function Dashboard({navigation}) {
             <Card onPress={bicycleServices}>
                 <Card.Cover style={styles.servicesImage} source={require('../../../assets/bicycle.jpg')} />
             </Card>
-            <Button buttonColor="gray" icon="logout" mode="contained" onPress={logout}>Sair</Button>
+            <Button buttonColor="#788eec" icon="logout" mode="contained" onPress={logout}>Sair</Button>
         </View>
     );
 }
