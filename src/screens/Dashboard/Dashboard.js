@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, ScrollView } from 'react-native';
 import { Appbar, Card, Button } from 'react-native-paper';
 import { firebase } from '../../firebase/config'
 
@@ -26,7 +26,7 @@ export default function Dashboard({navigation}) {
     }
 
     return (
-        <View>
+        <ScrollView>
             <Appbar.Header>
                 <Appbar.Content title="Veículos" />
             </Appbar.Header>
@@ -43,7 +43,7 @@ export default function Dashboard({navigation}) {
                 <Card.Cover style={styles.servicesImage} source={require('../../../assets/bicycle.jpg')} />
             </Card>
             <Button buttonColor="#788eec" icon="logout" mode="contained" onPress={logout}>Sair</Button>
-        </View>
+        </ScrollView>
     );
 }
 

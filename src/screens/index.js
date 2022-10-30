@@ -1,8 +1,12 @@
+// Login e Cadastro
 export { default as LoginScreen } from './LoginScreen/LoginScreen'
-export { default as Dashboard } from './Dashboard/Dashboard'
 export { default as RegistrationScreen } from './RegistrationScreen/RegistrationScreen'
-export { default as Carros } from './services/Carros'
-export { default as Motos } from './services/Motos'
-export { default as Caminhões } from './services/Caminhões.js'
-export { default as Bicicletas } from './services/Bicicletas.js'
-export { default as Agendamentos } from './services/Agendamentos.js'
+
+// Pagina Inicial
+export { default as Dashboard } from './Dashboard/Dashboard'
+
+// Veiculos
+export { default as Carros } from './vehicles/Carros'
+
+// Serviços Carros
+export { default as Lavagem_Rapida } from './services/cars/Lavagem_Rapida'
