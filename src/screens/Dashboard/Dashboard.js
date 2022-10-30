@@ -5,19 +5,19 @@ import { firebase } from '../../firebase/config'
 
 export default function Dashboard({navigation}) {
     const carServices = () => {
-        navigation.navigate('carServices')
+        navigation.navigate('Carros')
     }
 
     const bikeServices = () => {
-        navigation.navigate('bikeServices')
+        navigation.navigate('Motos')
     }
 
     const truckServices = () => {
-        navigation.navigate('truckServices')
+        navigation.navigate('Caminhões')
     }
 
     const bicycleServices = () => {
-        navigation.navigate('bicycleServices')
+        navigation.navigate('Bicicletas')
     }
 
     const logout = () => {
