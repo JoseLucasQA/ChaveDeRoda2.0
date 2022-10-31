@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { Avatar, Card, TextInput } from 'react-native-paper';
+import { Avatar, Card, BottomNavigation, Text } from 'react-native-paper';
 import { ScrollView, StyleSheet } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default function Carros({ navigation }) {
 
+    // serviços 
     const Lavagem_Rapida = () => {
         navigation.navigate('Lavagem_Rapida')
     }
@@ -54,9 +55,6 @@ export default function Carros({ navigation }) {
                     left={(props) => <Avatar.Icon {...props} icon="oil" />}
                     onPress={() => { }} />
             </TouchableOpacity>
-
-
-
 
         </ScrollView>
     );
