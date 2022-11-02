@@ -39,7 +39,7 @@ export default function Troca_De_Amortecedor({ navigation }) {
                 startServiceTime: moment(date).format("DD-MM-YYYY, HH:MM"),
                 endServiceTime: moment(date).add(4, 'hours').format("DD-MM-YYYY, HH:MM"),
                 price: 700,
-                vehicle: 'car',
+                vehicle: 'bike',
                 service: "Troca de Amortecedores",
                 status: "Em Aberto"
             }),
