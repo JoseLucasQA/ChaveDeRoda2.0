@@ -5,6 +5,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import firebase from "firebase";
 import { useState } from 'react';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import moment from "moment";
 
 export default function Carros({ navigation }) {
 
@@ -45,7 +46,7 @@ export default function Carros({ navigation }) {
                     email: userEmail,
                     report: reports,
                     vehicle: 'car',
-                    date: (new Date)
+                    date: (moment(new Date).format("DD-MM-YYYY, hh:mm"))
                 }),
                 Alert.alert(
                     "Obrigado por avaliar nossos serviços, estaremos buscando sempre o melhor para você!"
@@ -60,6 +61,7 @@ export default function Carros({ navigation }) {
             keyboardShouldPersistTaps="always">
 
             <ScrollView>
+
                 <TouchableOpacity onPress={Revisão_Motor}>
                     <Card.Title
                         title="Revisão Motor"
@@ -112,6 +114,7 @@ export default function Carros({ navigation }) {
                 />
 
             </ScrollView>
+
         </KeyboardAwareScrollView>
     );
 }

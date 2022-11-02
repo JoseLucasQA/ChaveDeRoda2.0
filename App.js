@@ -9,7 +9,7 @@ import { LoginScreen, Dashboard, RegistrationScreen, } from './src/screens'
 import { Carros } from './src/screens'
 
 // Serviços Carro
-import { Lavagem_Rapida } from './src/screens'
+import { Revisão_Motor } from './src/screens'
 
 import { LogBox } from 'react-native';
 LogBox.ignoreAllLogs();
@@ -21,15 +21,15 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen name="Login" component={LoginScreen} /> */}
-        {/* <Stack.Screen name="Registration" component={RegistrationScreen} /> */}
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Registration" component={RegistrationScreen} />
 
 
         <Stack.Screen name="Dashboard" component={Dashboard} />
         <Stack.Screen name="Carros" component={Carros} />
 
 
-        <Stack.Screen name="Lavagem_Rapida" component={Lavagem_Rapida} />
+        <Stack.Screen name="Revisão_Motor" component={Revisão_Motor} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -9,4 +9,4 @@ export { default as Dashboard } from './Dashboard/Dashboard'
 export { default as Carros } from './vehicles/Carros'
 
 // Serviços Carros
-export { default as Lavagem_Rapida } from './services/cars/Lavagem_Rapida'
+export { default as Revisão_Motor } from './services/cars/Revisão_Motor'

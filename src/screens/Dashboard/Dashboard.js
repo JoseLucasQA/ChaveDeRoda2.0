@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, ScrollView } from 'react-native';
-import { Appbar, Card, Title, Paragraph } from 'react-native-paper';
+import { Appbar, Card, Title } from 'react-native-paper';
 import { firebase } from '../../firebase/config'
 
 export default function Dashboard({ navigation }) {
@@ -20,6 +20,15 @@ export default function Dashboard({ navigation }) {
         navigation.navigate('Bicicletas')
     }
 
+     const getReports = async () => {
+        let query = firebase.firestore().collection('reports').limit(5);
+        let snapshop = await query.get();
+
+        let reports = snapshop.docs.map(doc => doc.data())
+
+        return console.log(reports[0].report)
+    }
+    
     return (
         <ScrollView>
 
@@ -30,7 +39,7 @@ export default function Dashboard({ navigation }) {
             <Card onPress={carServices}>
                 <Card.Cover style={styles.servicesImage} source={require('../../../assets/car.jpg')} />
             </Card>
-            <Card onPress={bikeServices}>
+            <Card onPress={getReports}>
                 <Card.Cover style={styles.servicesImage} source={require('../../../assets/bike.jpg')} />
             </Card>
             <Card onPress={truckServices}>
@@ -50,16 +59,13 @@ export default function Dashboard({ navigation }) {
 
             <Card>
                 <Card.Content>
-                    <Title>ok</Title>
-                    <Paragraph> Elogios aqui </Paragraph>
+                    <Title></Title>
                 </Card.Content>
             </Card>
 
             <Appbar.Header>
                 <Appbar.Content title="Mapa" />
             </Appbar.Header>
-
-
 
         </ScrollView>
     );
