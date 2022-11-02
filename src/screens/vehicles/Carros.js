@@ -14,8 +14,8 @@ export default function Carros({ navigation }) {
         navigation.navigate('Revisão_Motor')
     }
 
-    function completeWash() {
-        navigation.navigate('schedules')
+    function Revisão_Sistema_De_Transmissão() {
+        navigation.navigate('Revisão_Sistema_De_Transmissão')
     }
 
     function alignmentAndBalance() {
@@ -70,10 +70,10 @@ export default function Carros({ navigation }) {
                     />
                 </TouchableOpacity>
 
-                <TouchableOpacity>
+                <TouchableOpacity onPress={Revisão_Sistema_De_Transmissão}>
                     <Card.Title
                         title="Revisão Sistema de Transmissão"
-                        subtitle="Preço R$100,00"
+                        subtitle="Preço R$450,00"
                         left={(props) => <Avatar.Icon {...props} icon="car-wash" />}
                         onPress={() => { }} />
                 </TouchableOpacity>
