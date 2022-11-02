@@ -22,8 +22,8 @@ export default function Carros({ navigation }) {
         navigation.navigate('Alinhamento_e_Balanceamento')
     }
 
-    function oilChangeAndFilter() {
-        navigation.navigate('schedules')
+    function Troca_de_Oleo_e_Filtros() {
+        navigation.navigate('Troca_de_Oleo_e_Filtros')
     }
 
     const userID = firebase.auth().currentUser.uid;
@@ -86,7 +86,7 @@ export default function Carros({ navigation }) {
                         onPress={() => { }} />
                 </TouchableOpacity>
 
-                <TouchableOpacity>
+                <TouchableOpacity onPress={Troca_de_Oleo_e_Filtros}>
                     <Card.Title
                         title="Troca de Óleo e Filtros"
                         subtitle="Preço R$350,00"

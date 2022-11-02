@@ -40,7 +40,8 @@ export default function Alinhamento_e_Balanceamento({ navigation }) {
                 endServiceTime: moment(date).add(12, 'hours').format("DD-MM-YYYY, HH:MM"),
                 price: 500,
                 vehicle: 'car',
-                service: "Alinhamento e Balanceamento"
+                service: "Alinhamento e Balanceamento",
+                status: "Em Aberto"
             }),
             Alert.alert(
                 "Agendamento efetuado com sucesso!",

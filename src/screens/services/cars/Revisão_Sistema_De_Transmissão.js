@@ -40,7 +40,8 @@ export default function Revisão_Sistema_De_Transmissão({ navigation }) {
                 endServiceTime: moment(date).add(12, 'hours').format("DD-MM-YYYY, HH:MM"),
                 price: 500,
                 vehicle: 'car',
-                service: "Revisão Sistema de Transmissão"
+                service: "Revisão Sistema de Transmissão",
+                status: "Em Aberto"
             }),
             Alert.alert(
                 "Agendamento efetuado com sucesso!",
