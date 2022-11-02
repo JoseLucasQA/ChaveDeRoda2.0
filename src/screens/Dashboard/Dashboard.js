@@ -20,7 +20,7 @@ export default function Dashboard({ navigation }) {
         navigation.navigate('Bicicletas')
     }
 
-     const getReports = async () => {
+    const getReports = async () => {
         let query = firebase.firestore().collection('reports').limit(5);
         let snapshop = await query.get();
 
@@ -28,7 +28,7 @@ export default function Dashboard({ navigation }) {
 
         return console.log(reports[0].report)
     }
-    
+
     return (
         <ScrollView>
 
@@ -39,7 +39,7 @@ export default function Dashboard({ navigation }) {
             <Card onPress={carServices}>
                 <Card.Cover style={styles.servicesImage} source={require('../../../assets/car.jpg')} />
             </Card>
-            <Card onPress={getReports}>
+            <Card onPress={bikeServices}>
                 <Card.Cover style={styles.servicesImage} source={require('../../../assets/bike.jpg')} />
             </Card>
             <Card onPress={truckServices}>

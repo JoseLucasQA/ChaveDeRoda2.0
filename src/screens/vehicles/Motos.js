@@ -80,7 +80,7 @@ export default function Motos({ navigation }) {
 
                 <TouchableOpacity onPress={Troca_De_Pneus}>
                     <Card.Title
-                        title="Troca_De_Pneus"
+                        title="Troca de Pneus"
                         subtitle="Preço R$200,00"
                         left={(props) => <Avatar.Icon {...props} icon="tire" />}
                         onPress={() => { }} />

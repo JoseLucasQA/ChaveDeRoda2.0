@@ -8,7 +8,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import moment from "moment";
 
 
-export default function Revisão_Motor({ navigation }) {
+export default function Troca_Disco_De_Freio({ navigation }) {
 
     const idUser = firebase.auth().currentUser.uid;
     const [date, setDate] = useState(new Date);
@@ -37,10 +37,10 @@ export default function Revisão_Motor({ navigation }) {
             firebase.firestore().collection('schedules').doc().set({
                 userID: idUser,
                 startServiceTime: moment(date).format("DD-MM-YYYY, HH:MM"),
-                endServiceTime: moment(date).add(12, 'hours').format("DD-MM-YYYY, HH:MM"),
-                price: 500,
-                vehicle: 'car',
-                service: "Revisão de Motor",
+                endServiceTime: moment(date).add(2, 'hours').format("DD-MM-YYYY, HH:MM"),
+                price: 350,
+                vehicle: 'bike',
+                service: "Troca Disco de Freio",
                 status: "Em Aberto"
             }),
             Alert.alert(
@@ -58,7 +58,7 @@ export default function Revisão_Motor({ navigation }) {
             <ScrollView>
 
                 <Appbar.Header>
-                    <Appbar.Content title="R$500,00" />
+                    <Appbar.Content title="R$350,00" />
                 </Appbar.Header>
 
                 <Text style={styles.dataLabel}> Inserir data e hora do agendamento </Text>
@@ -76,7 +76,7 @@ export default function Revisão_Motor({ navigation }) {
                 />
 
                 <Text style={styles.infoEndTimeService} >
-                    Previsão de conclusão: {moment(date).add(12, 'hours').format("DD-MM-YYYY, HH:MM")}
+                    Previsão de conclusão: {moment(date).add(2, 'hours').format("DD-MM-YYYY, HH:MM")}
                 </Text>
 
                 <FAB

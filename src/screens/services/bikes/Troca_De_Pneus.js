@@ -40,7 +40,7 @@ export default function Troca_De_Pneus({ navigation }) {
                 endServiceTime: moment(date).add(2, 'hours').format("DD-MM-YYYY, HH:MM"),
                 price: 200,
                 vehicle: 'bike',
-                service: "TrocaDe Pneus",
+                service: "Troca de Pneus",
                 status: "Em Aberto"
             }),
             Alert.alert(
