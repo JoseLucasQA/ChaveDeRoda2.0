@@ -11,3 +11,4 @@ export { default as Carros } from './vehicles/Carros'
 // Serviços Carros
 export { default as Revisão_Motor } from './services/cars/Revisão_Motor'
 export { default as Revisão_Sistema_De_Transmissão } from './services/cars/Revisão_Sistema_De_Transmissão'
+export { default as Alinhamento_e_Balanceamento } from './services/cars/Alinhamento_e_Balanceamento'

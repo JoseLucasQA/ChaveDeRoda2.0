@@ -8,7 +8,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import moment from "moment";
 
 
-export default function Revisão_Motor({ navigation }) {
+export default function Alinhamento_e_Balanceamento({ navigation }) {
 
     const idUser = firebase.auth().currentUser.uid;
     const [date, setDate] = useState(new Date);
@@ -40,7 +40,7 @@ export default function Revisão_Motor({ navigation }) {
                 endServiceTime: moment(date).add(12, 'hours').format("DD-MM-YYYY, HH:MM"),
                 price: 500,
                 vehicle: 'car',
-                service: "Revisãoa de Motor"
+                service: "Alinhamento e Balanceamento"
             }),
             Alert.alert(
                 "Agendamento efetuado com sucesso!",

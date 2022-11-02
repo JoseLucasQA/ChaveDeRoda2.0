@@ -9,7 +9,7 @@ import { LoginScreen, Dashboard, RegistrationScreen, } from './src/screens'
 import { Carros } from './src/screens'
 
 // Serviços Carro
-import { Revisão_Motor, Revisão_Sistema_De_Transmissão } from './src/screens'
+import { Revisão_Motor, Revisão_Sistema_De_Transmissão, Alinhamento_e_Balanceamento } from './src/screens'
 
 import { LogBox } from 'react-native';
 LogBox.ignoreAllLogs();
@@ -31,6 +31,7 @@ export default function App() {
 
         <Stack.Screen name="Revisão_Motor" component={Revisão_Motor} />
         <Stack.Screen name="Revisão_Sistema_De_Transmissão" component={Revisão_Sistema_De_Transmissão} />
+        <Stack.Screen name="Alinhamento_e_Balanceamento" component={Alinhamento_e_Balanceamento} />
       </Stack.Navigator>
     </NavigationContainer>
   );

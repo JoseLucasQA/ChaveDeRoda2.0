@@ -18,8 +18,8 @@ export default function Carros({ navigation }) {
         navigation.navigate('Revisão_Sistema_De_Transmissão')
     }
 
-    function alignmentAndBalance() {
-        navigation.navigate('schedules')
+    function Alinhamento_e_Balanceamento() {
+        navigation.navigate('Alinhamento_e_Balanceamento')
     }
 
     function oilChangeAndFilter() {
@@ -46,7 +46,7 @@ export default function Carros({ navigation }) {
                     email: userEmail,
                     report: reports,
                     vehicle: 'car',
-                    date: (moment(new Date).format("DD-MM-YYYY, hh:mm"))
+                    date: (moment(new Date).format("DD-MM-YYYY, HH:MM"))
                 }),
                 Alert.alert(
                     "Obrigado por avaliar nossos serviços, estaremos buscando sempre o melhor para você!"
@@ -78,7 +78,7 @@ export default function Carros({ navigation }) {
                         onPress={() => { }} />
                 </TouchableOpacity>
 
-                <TouchableOpacity>
+                <TouchableOpacity onPress={Alinhamento_e_Balanceamento}>
                     <Card.Title
                         title="Alinhamento + Balançeamento"
                         subtitle="Preço R$200,00"

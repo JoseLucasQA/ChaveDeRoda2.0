@@ -19,7 +19,7 @@ export default function Revisão_Sistema_De_Transmissão({ navigation }) {
 
     const scheduleService = async () => {
 
-        let requestDate = moment(date).format("DD-MM-YYYY, hh:mm")
+        let requestDate = moment(date).format("DD-MM-YYYY, HH:MM")
         let query = await firebase.firestore().
             collection('schedules').
             where('startServiceTime', '==', requestDate).
@@ -33,12 +33,11 @@ export default function Revisão_Sistema_De_Transmissão({ navigation }) {
             )
         }
 
-
         return (
             firebase.firestore().collection('schedules').doc().set({
                 userID: idUser,
-                startServiceTime: moment(date).format("DD-MM-YYYY, hh:mm"),
-                endServiceTime: moment(date).add(12, 'hours').format("DD-MM-YYYY, hh:mm"),
+                startServiceTime: moment(date).format("DD-MM-YYYY, HH:MM"),
+                endServiceTime: moment(date).add(12, 'hours').format("DD-MM-YYYY, HH:MM"),
                 price: 500,
                 vehicle: 'car',
                 service: "Revisão Sistema de Transmissão"
@@ -76,7 +75,7 @@ export default function Revisão_Sistema_De_Transmissão({ navigation }) {
                 />
 
                 <Text style={styles.infoEndTimeService} >
-                    Previsão de conclusão: {moment(date).add(12, 'hours').format("DD-MM-YYYY, hh:mm")}
+                    Previsão de conclusão: {moment(date).add(12, 'hours').format("DD-MM-YYYY, HH:MM")}
                 </Text>
 
                 <FAB
