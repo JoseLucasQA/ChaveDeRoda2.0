@@ -37,8 +37,8 @@ export default function Revisão_Sistema_De_Transmissão({ navigation }) {
             firebase.firestore().collection('schedules').doc().set({
                 userID: idUser,
                 startServiceTime: moment(date).format("DD-MM-YYYY, HH:MM"),
-                endServiceTime: moment(date).add(12, 'hours').format("DD-MM-YYYY, HH:MM"),
-                price: 500,
+                endServiceTime: moment(date).add(6, 'hours').format("DD-MM-YYYY, HH:MM"),
+                price: 450,
                 vehicle: 'car',
                 service: "Revisão Sistema de Transmissão",
                 status: "Em Aberto"
@@ -58,7 +58,7 @@ export default function Revisão_Sistema_De_Transmissão({ navigation }) {
             <ScrollView>
 
                 <Appbar.Header>
-                    <Appbar.Content title="R$500,00" />
+                    <Appbar.Content title="R$450,00" />
                 </Appbar.Header>
 
                 <Text style={styles.dataLabel}> Inserir data e hora do agendamento </Text>
@@ -76,7 +76,7 @@ export default function Revisão_Sistema_De_Transmissão({ navigation }) {
                 />
 
                 <Text style={styles.infoEndTimeService} >
-                    Previsão de conclusão: {moment(date).add(12, 'hours').format("DD-MM-YYYY, HH:MM")}
+                    Previsão de conclusão: {moment(date).add(6, 'hours').format("DD-MM-YYYY, HH:MM")}
                 </Text>
 
                 <FAB

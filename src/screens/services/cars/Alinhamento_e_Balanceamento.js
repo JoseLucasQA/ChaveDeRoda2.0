@@ -37,8 +37,8 @@ export default function Alinhamento_e_Balanceamento({ navigation }) {
             firebase.firestore().collection('schedules').doc().set({
                 userID: idUser,
                 startServiceTime: moment(date).format("DD-MM-YYYY, HH:MM"),
-                endServiceTime: moment(date).add(12, 'hours').format("DD-MM-YYYY, HH:MM"),
-                price: 500,
+                endServiceTime: moment(date).add(2, 'hours').format("DD-MM-YYYY, HH:MM"),
+                price: 200,
                 vehicle: 'car',
                 service: "Alinhamento e Balanceamento",
                 status: "Em Aberto"
@@ -58,7 +58,7 @@ export default function Alinhamento_e_Balanceamento({ navigation }) {
             <ScrollView>
 
                 <Appbar.Header>
-                    <Appbar.Content title="R$500,00" />
+                    <Appbar.Content title="R$200,00" />
                 </Appbar.Header>
 
                 <Text style={styles.dataLabel}> Inserir data e hora do agendamento </Text>
@@ -76,7 +76,7 @@ export default function Alinhamento_e_Balanceamento({ navigation }) {
                 />
 
                 <Text style={styles.infoEndTimeService} >
-                    Previsão de conclusão: {moment(date).add(12, 'hours').format("DD-MM-YYYY, HH:MM")}
+                    Previsão de conclusão: {moment(date).add(2, 'hours').format("DD-MM-YYYY, HH:MM")}
                 </Text>
 
                 <FAB
