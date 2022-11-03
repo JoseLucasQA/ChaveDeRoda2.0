@@ -34,3 +34,12 @@ export { default as BikeFit } from './services/bicycles/BikeFit'
 export { default as Desempenar_Aros } from './services/bicycles/Desempenar_Aros'
 export { default as Lubrificação_Completa } from './services/bicycles/Lubrificação_Completa'
 export { default as Troca_de_Corrente } from './services/bicycles/Troca_de_Corrente'
+
+// Avaliações 
+export { default as Agendamentos } from './Agendamentos/Agendamentos'
+
+// Mapa
+export { default as Avaliações } from './Avaliações/Avaliações'
+
+// Meus Agendamentos
+export { default as Mapa } from './Mapa/Mapa'

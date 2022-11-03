@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, ScrollView } from 'react-native';
-import { Appbar, Card, Title, Text } from 'react-native-paper';
+import { Appbar, Card, Text } from 'react-native-paper';
 import { firebase } from '../../firebase/config'
 
 export default function Dashboard({ navigation }) {
@@ -18,6 +18,18 @@ export default function Dashboard({ navigation }) {
 
     const bicycleServices = () => {
         navigation.navigate('Bicicletas')
+    }
+
+    const schedules = () => {
+        navigation.navigate('Agendamentos')
+    }
+
+    const reports = () => {
+        navigation.navigate('Avaliações')
+    }
+
+    const map = () => {
+        navigation.navigate('Mapa')
     }
 
     const getReports = async () => {
@@ -53,19 +65,25 @@ export default function Dashboard({ navigation }) {
                 <Appbar.Content title="Meus Agendamentos" />
             </Appbar.Header>
 
+            <Card onPress={schedules}>
+                <Card.Cover style={styles.servicesImage} source={require('../../../assets/schedules.jpg')} />
+            </Card>
+
             <Appbar.Header>
                 <Appbar.Content title="Avaliações" />
             </Appbar.Header>
 
-            <Card>
-                <Card.Content>
-                    <Title></Title>
-                </Card.Content>
+            <Card onPress={reports}>
+                <Card.Cover style={styles.servicesImage} source={require('../../../assets/reports.png')} />
             </Card>
 
             <Appbar.Header>
-                <Appbar.Content title="Mapa" />
+                <Appbar.Content title="Traçar Rota" />
             </Appbar.Header>
+
+            <Card onPress={map}>
+                <Card.Cover style={styles.servicesImage} source={require('../../../assets/maps.jpg')} />
+            </Card>
 
             <Text style={styles.info}>GitHub : https://github.com/JoseLucasQA</Text>
 
@@ -84,6 +102,7 @@ const styles = StyleSheet.create({
     },
     info: {
         textAlign: 'center',
-        margin: 10
+        margin: 10,
+        fontStyle: 'italic',
     },
 });
