@@ -7,23 +7,23 @@ import { useState } from 'react';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import moment from "moment";
 
-export default function Motos({ navigation }) {
+export default function Bicicletas({ navigation }) {
 
     // serviços 
-    const Troca_De_Amortecedor = () => {
-        navigation.navigate('Troca_De_Amortecedor')
+    const BikeFit = () => {
+        navigation.navigate('BikeFit')
     }
 
-    function Troca_De_Escapamento() {
-        navigation.navigate('Troca_De_Escapamento')
+    function Desempenar_Aros() {
+        navigation.navigate('Desempenar_Aros')
     }
 
-    function Troca_De_Pneus() {
-        navigation.navigate('Troca_De_Pneus')
+    function Lubrificação_Completa() {
+        navigation.navigate('Lubrificação_Completa')
     }
 
-    function Troca_Disco_De_Freio() {
-        navigation.navigate('Troca_Disco_De_Freio')
+    function Troca_de_Corrente() {
+        navigation.navigate('Troca_de_Corrente')
     }
 
     const userID = firebase.auth().currentUser.uid;
@@ -45,7 +45,7 @@ export default function Motos({ navigation }) {
                     userID: userID,
                     email: userEmail,
                     report: reports,
-                    vehicle: 'bikes',
+                    vehicle: 'bicycles',
                     date: (moment(new Date).format("DD-MM-YYYY, HH:MM"))
                 }),
                 Alert.alert(
@@ -62,35 +62,35 @@ export default function Motos({ navigation }) {
 
             <ScrollView>
 
-                <TouchableOpacity onPress={Troca_De_Amortecedor}>
+                <TouchableOpacity onPress={BikeFit}>
                     <Card.Title
-                        title="Troca de Amortecedores"
-                        subtitle="Preço R$700,00"
-                        left={(props) => <Avatar.Icon {...props} icon="motorbike-electric" />}
+                        title="BikeFit"
+                        subtitle="Preço R$450,00"
+                        left={(props) => <Avatar.Icon {...props} icon="bike-fast" />}
                     />
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={Troca_De_Escapamento}>
+                <TouchableOpacity onPress={Desempenar_Aros}>
                     <Card.Title
-                        title="Troca de Escapamento"
-                        subtitle="Preço R$320,00"
-                        left={(props) => <Avatar.Icon {...props} icon="motorbike" />}
-                        onPress={() => { }} />
-                </TouchableOpacity>
-
-                <TouchableOpacity onPress={Troca_De_Pneus}>
-                    <Card.Title
-                        title="Troca de Pneus"
-                        subtitle="Preço R$200,00"
+                        title="Desempenar Aros"
+                        subtitle="Preço R$50,00"
                         left={(props) => <Avatar.Icon {...props} icon="tire" />}
                         onPress={() => { }} />
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={Troca_Disco_De_Freio}>
+                <TouchableOpacity onPress={Lubrificação_Completa}>
                     <Card.Title
-                        title="Troca de Óleo e Filtros"
-                        subtitle="Preço R$350,00"
+                        title="Lubrificação Completa"
+                        subtitle="Preço R$100,00"
                         left={(props) => <Avatar.Icon {...props} icon="oil" />}
+                        onPress={() => { }} />
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={Troca_de_Corrente}>
+                    <Card.Title
+                        title="Troca de Corrente"
+                        subtitle="Preço R$40,00"
+                        left={(props) => <Avatar.Icon {...props} icon="link-lock" />}
                         onPress={() => { }} />
                 </TouchableOpacity>
 

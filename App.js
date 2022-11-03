@@ -6,13 +6,14 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { LoginScreen, Dashboard, RegistrationScreen } from './src/screens'
 
 // Veiculos
-import { Carros, Motos, Caminhões } from './src/screens'
+import { Carros, Motos, Caminhões, Bicicletas } from './src/screens'
 
 // Serviços
 import {
   Revisão_Motor, Revisão_Sistema_De_Transmissão, Alinhamento_e_Balanceamento, Troca_de_Oleo_e_Filtros,
   Troca_De_Amortecedor, Troca_De_Escapamento, Troca_De_Pneus, Troca_Disco_De_Freio,
-  Leitura_Modulo_ECU, Lubrificação_Quinta_Roda, Polimentos_Rodas_e_Tanque, Troca_Lona_de_Freios
+  Leitura_Modulo_ECU, Lubrificação_Quinta_Roda, Polimentos_Rodas_e_Tanque, Troca_Lona_de_Freios,
+  BikeFit, Desempenar_Aros, Lubrificação_Completa, Troca_de_Corrente
 } from './src/screens'
 
 import { LogBox } from 'react-native';
@@ -47,6 +48,12 @@ export default function App() {
         <Stack.Screen name="Lubrificação_Quinta_Roda" component={Lubrificação_Quinta_Roda} />
         <Stack.Screen name="Polimentos_Rodas_e_Tanque" component={Polimentos_Rodas_e_Tanque} />
         <Stack.Screen name="Troca_Lona_de_Freios" component={Troca_Lona_de_Freios} />
+
+        <Stack.Screen name="Bicicletas" component={Bicicletas} />
+        <Stack.Screen name="BikeFit" component={BikeFit} />
+        <Stack.Screen name="Desempenar_Aros" component={Desempenar_Aros} />
+        <Stack.Screen name="Lubrificação_Completa" component={Lubrificação_Completa} />
+        <Stack.Screen name="Troca_de_Corrente" component={Troca_de_Corrente} />
 
       </Stack.Navigator>
     </NavigationContainer>

@@ -9,6 +9,7 @@ export { default as Dashboard } from './Dashboard/Dashboard'
 export { default as Carros } from './vehicles/Carros'
 export { default as Motos } from './vehicles/Motos'
 export { default as Caminhões } from './vehicles/Caminhões'
+export { default as Bicicletas } from './vehicles/Bicicletas'
 
 // Serviços Carros
 export { default as Revisão_Motor } from './services/cars/Revisão_Motor'
@@ -27,3 +28,9 @@ export { default as Leitura_Modulo_ECU } from './services/trucks/Leitura_Modulo_
 export { default as Lubrificação_Quinta_Roda } from './services/trucks/Lubrificação_Quinta_Roda'
 export { default as Polimentos_Rodas_e_Tanque } from './services/trucks/Polimentos_Rodas_e_Tanque'
 export { default as Troca_Lona_de_Freios } from './services/trucks/Troca_Lona_de_Freios'
+
+// Serviços Bicicletas
+export { default as BikeFit } from './services/bicycles/BikeFit'
+export { default as Desempenar_Aros } from './services/bicycles/Desempenar_Aros'
+export { default as Lubrificação_Completa } from './services/bicycles/Lubrificação_Completa'
+export { default as Troca_de_Corrente } from './services/bicycles/Troca_de_Corrente'

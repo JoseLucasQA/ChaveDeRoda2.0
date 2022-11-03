@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, ScrollView } from 'react-native';
-import { Appbar, Card, Title } from 'react-native-paper';
+import { Appbar, Card, Title, Text } from 'react-native-paper';
 import { firebase } from '../../firebase/config'
 
 export default function Dashboard({ navigation }) {
@@ -67,6 +67,8 @@ export default function Dashboard({ navigation }) {
                 <Appbar.Content title="Mapa" />
             </Appbar.Header>
 
+            <Text style={styles.info}>GitHub : https://github.com/JoseLucasQA</Text>
+
         </ScrollView>
     );
 }
@@ -79,5 +81,9 @@ const styles = StyleSheet.create({
         margin: 10,
         justifyContent: "center",
         alignItems: 'stretch',
+    },
+    info: {
+        textAlign: 'center',
+        margin: 10
     },
 });
