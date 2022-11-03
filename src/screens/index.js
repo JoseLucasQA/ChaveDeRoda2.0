@@ -20,3 +20,9 @@ export { default as Troca_De_Amortecedor } from './services/bikes/Troca_De_Amort
 export { default as Troca_De_Escapamento } from './services/bikes/Troca_De_Escapamento'
 export { default as Troca_De_Pneus } from './services/bikes/Troca_De_Pneus'
 export { default as Troca_Disco_De_Freio } from './services/bikes/Troca_Disco_De_Freio'
+
+// Serviços Caminhões
+export { default as Leitura_Modulo_ECU } from './services/bikes/Leitura_Modulo_ECU'
+export { default as Lubrificação_Quinta_Roda } from './services/bikes/Lubrificação_Quinta_Roda'
+export { default as Polimentos_Rodas_e_Tanque } from './services/bikes/Polimentos_Rodas_e_Tanque'
+export { default as Troca_Lona_de_Freios } from './services/bikes/Troca_Lona_de_Freios'
