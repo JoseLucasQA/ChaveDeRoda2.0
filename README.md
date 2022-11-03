@@ -4,3 +4,5 @@
 - Análise e Desenvolvimento de Sistemas 
 - Estácio FIC 
 - Campus Parangaba 
+
+- Desenvolvido por : José Lucas - 202001624902
