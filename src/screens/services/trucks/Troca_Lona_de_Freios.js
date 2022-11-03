@@ -37,10 +37,10 @@ export default function Troca_Lona_de_Freios({ navigation }) {
             firebase.firestore().collection('schedules').doc().set({
                 userID: idUser,
                 startServiceTime: moment(date).format("DD-MM-YYYY, HH:MM"),
-                endServiceTime: moment(date).add(2, 'hours').format("DD-MM-YYYY, HH:MM"),
-                price: 200,
-                vehicle: 'bike',
-                service: "Troca de Pneus",
+                endServiceTime: moment(date).add(4, 'hours').format("DD-MM-YYYY, HH:MM"),
+                price: 800,
+                vehicle: 'truck',
+                service: "Troca Lonas de Freio",
                 status: "Em Aberto"
             }),
             Alert.alert(
@@ -58,7 +58,7 @@ export default function Troca_Lona_de_Freios({ navigation }) {
             <ScrollView>
 
                 <Appbar.Header>
-                    <Appbar.Content title="R$200,00" />
+                    <Appbar.Content title="R$800,00" />
                 </Appbar.Header>
 
                 <Text style={styles.dataLabel}> Inserir data e hora do agendamento </Text>
@@ -76,7 +76,7 @@ export default function Troca_Lona_de_Freios({ navigation }) {
                 />
 
                 <Text style={styles.infoEndTimeService} >
-                    Previsão de conclusão: {moment(date).add(2, 'hours').format("DD-MM-YYYY, HH:MM")}
+                    Previsão de conclusão: {moment(date).add(4, 'hours').format("DD-MM-YYYY, HH:MM")}
                 </Text>
 
                 <FAB

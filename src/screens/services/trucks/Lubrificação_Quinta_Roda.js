@@ -37,10 +37,10 @@ export default function Lubrificação_Quinta_Roda({ navigation }) {
             firebase.firestore().collection('schedules').doc().set({
                 userID: idUser,
                 startServiceTime: moment(date).format("DD-MM-YYYY, HH:MM"),
-                endServiceTime: moment(date).add(2, 'hours').format("DD-MM-YYYY, HH:MM"),
+                endServiceTime: moment(date).add(1, 'hours').format("DD-MM-YYYY, HH:MM"),
                 price: 320,
-                vehicle: 'bike',
-                service: "Troca de Escapamento",
+                vehicle: 'truck',
+                service: "Lubrificação Quinta Roda",
                 status: "Em Aberto"
             }),
             Alert.alert(
@@ -58,7 +58,7 @@ export default function Lubrificação_Quinta_Roda({ navigation }) {
             <ScrollView>
 
                 <Appbar.Header>
-                    <Appbar.Content title="R$320,00" />
+                    <Appbar.Content title="R$150,00" />
                 </Appbar.Header>
 
                 <Text style={styles.dataLabel}> Inserir data e hora do agendamento </Text>
@@ -76,7 +76,7 @@ export default function Lubrificação_Quinta_Roda({ navigation }) {
                 />
 
                 <Text style={styles.infoEndTimeService} >
-                    Previsão de conclusão: {moment(date).add(2, 'hours').format("DD-MM-YYYY, HH:MM")}
+                    Previsão de conclusão: {moment(date).add(1, 'hours').format("DD-MM-YYYY, HH:MM")}
                 </Text>
 
                 <FAB

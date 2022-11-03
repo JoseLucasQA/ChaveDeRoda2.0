@@ -37,10 +37,10 @@ export default function Polimentos_Rodas_e_Tanque({ navigation }) {
             firebase.firestore().collection('schedules').doc().set({
                 userID: idUser,
                 startServiceTime: moment(date).format("DD-MM-YYYY, HH:MM"),
-                endServiceTime: moment(date).add(2, 'hours').format("DD-MM-YYYY, HH:MM"),
-                price: 350,
-                vehicle: 'bike',
-                service: "Troca Disco de Freio",
+                endServiceTime: moment(date).add(1, 'hours').format("DD-MM-YYYY, HH:MM"),
+                price: 300,
+                vehicle: 'truck',
+                service: "Polimento Rodas e Tanque",
                 status: "Em Aberto"
             }),
             Alert.alert(
@@ -58,7 +58,7 @@ export default function Polimentos_Rodas_e_Tanque({ navigation }) {
             <ScrollView>
 
                 <Appbar.Header>
-                    <Appbar.Content title="R$350,00" />
+                    <Appbar.Content title="R$300,00" />
                 </Appbar.Header>
 
                 <Text style={styles.dataLabel}> Inserir data e hora do agendamento </Text>
@@ -76,7 +76,7 @@ export default function Polimentos_Rodas_e_Tanque({ navigation }) {
                 />
 
                 <Text style={styles.infoEndTimeService} >
-                    Previsão de conclusão: {moment(date).add(2, 'hours').format("DD-MM-YYYY, HH:MM")}
+                    Previsão de conclusão: {moment(date).add(1, 'hours').format("DD-MM-YYYY, HH:MM")}
                 </Text>
 
                 <FAB

@@ -37,10 +37,10 @@ export default function Leitura_Modulo_ECU({ navigation }) {
             firebase.firestore().collection('schedules').doc().set({
                 userID: idUser,
                 startServiceTime: moment(date).format("DD-MM-YYYY, HH:MM"),
-                endServiceTime: moment(date).add(4, 'hours').format("DD-MM-YYYY, HH:MM"),
-                price: 700,
-                vehicle: 'bike',
-                service: "Troca de Amortecedores",
+                endServiceTime: moment(date).add(1, 'hours').format("DD-MM-YYYY, HH:MM"),
+                price: 1100,
+                vehicle: 'truck',
+                service: "Leitura Modulo ECU",
                 status: "Em Aberto"
             }),
             Alert.alert(
@@ -58,7 +58,7 @@ export default function Leitura_Modulo_ECU({ navigation }) {
             <ScrollView>
 
                 <Appbar.Header>
-                    <Appbar.Content title="R$700,00" />
+                    <Appbar.Content title="R$1100,00" />
                 </Appbar.Header>
 
                 <Text style={styles.dataLabel}> Inserir data e hora do agendamento </Text>
@@ -76,7 +76,7 @@ export default function Leitura_Modulo_ECU({ navigation }) {
                 />
 
                 <Text style={styles.infoEndTimeService} >
-                    Previsão de conclusão: {moment(date).add(4, 'hours').format("DD-MM-YYYY, HH:MM")}
+                    Previsão de conclusão: {moment(date).add(1, 'hours').format("DD-MM-YYYY, HH:MM")}
                 </Text>
 
                 <FAB

@@ -7,23 +7,23 @@ import { useState } from 'react';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import moment from "moment";
 
-export default function Motos({ navigation }) {
+export default function Caminhões({ navigation }) {
 
     // serviços 
-    const Troca_De_Amortecedor = () => {
-        navigation.navigate('Troca_De_Amortecedor')
+    const Leitura_Modulo_ECU = () => {
+        navigation.navigate('Leitura_Modulo_ECU')
     }
 
-    function Troca_De_Escapamento() {
-        navigation.navigate('Troca_De_Escapamento')
+    function Lubrificação_Quinta_Roda() {
+        navigation.navigate('Lubrificação_Quinta_Roda')
     }
 
-    function Troca_De_Pneus() {
-        navigation.navigate('Troca_De_Pneus')
+    function Polimentos_Rodas_e_Tanque() {
+        navigation.navigate('Polimentos_Rodas_e_Tanque')
     }
 
-    function Troca_Disco_De_Freio() {
-        navigation.navigate('Troca_Disco_De_Freio')
+    function Troca_Lona_de_Freios() {
+        navigation.navigate('Troca_Lona_de_Freios')
     }
 
     const userID = firebase.auth().currentUser.uid;
@@ -45,7 +45,7 @@ export default function Motos({ navigation }) {
                     userID: userID,
                     email: userEmail,
                     report: reports,
-                    vehicle: 'bike',
+                    vehicle: 'truck',
                     date: (moment(new Date).format("DD-MM-YYYY, HH:MM"))
                 }),
                 Alert.alert(
@@ -62,35 +62,35 @@ export default function Motos({ navigation }) {
 
             <ScrollView>
 
-                <TouchableOpacity onPress={Troca_De_Amortecedor}>
+                <TouchableOpacity onPress={Leitura_Modulo_ECU}>
                     <Card.Title
-                        title="Troca de Amortecedores"
-                        subtitle="Preço R$700,00"
-                        left={(props) => <Avatar.Icon {...props} icon="motorbike-electric" />}
+                        title="Leitura de Módulo ECU"
+                        subtitle="Preço R$1100,00"
+                        left={(props) => <Avatar.Icon {...props} icon="cellphone-information" />}
                     />
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={Troca_De_Escapamento}>
+                <TouchableOpacity onPress={Lubrificação_Quinta_Roda}>
                     <Card.Title
-                        title="Troca de Escapamento"
-                        subtitle="Preço R$320,00"
-                        left={(props) => <Avatar.Icon {...props} icon="motorbike" />}
-                        onPress={() => { }} />
-                </TouchableOpacity>
-
-                <TouchableOpacity onPress={Troca_De_Pneus}>
-                    <Card.Title
-                        title="Troca de Pneus"
-                        subtitle="Preço R$200,00"
+                        title="Lubrificação Quinta Roda"
+                        subtitle="Preço R$150,00"
                         left={(props) => <Avatar.Icon {...props} icon="tire" />}
                         onPress={() => { }} />
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={Troca_Disco_De_Freio}>
+                <TouchableOpacity onPress={Polimentos_Rodas_e_Tanque}>
                     <Card.Title
-                        title="Troca de Óleo e Filtros"
-                        subtitle="Preço R$350,00"
-                        left={(props) => <Avatar.Icon {...props} icon="oil" />}
+                        title="Polimento Rodas e Tanque"
+                        subtitle="Preço R$300,00"
+                        left={(props) => <Avatar.Icon {...props} icon="spray-bottle" />}
+                        onPress={() => { }} />
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={Troca_Lona_de_Freios}>
+                    <Card.Title
+                        title="Troca Lonas de Freio"
+                        subtitle="Preço R$800,00"
+                        left={(props) => <Avatar.Icon {...props} icon="car-brake-abs" />}
                         onPress={() => { }} />
                 </TouchableOpacity>
 

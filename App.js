@@ -3,19 +3,19 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
 // Telas Principais
-import { LoginScreen, Dashboard, RegistrationScreen, } from './src/screens'
+import { LoginScreen, Dashboard, RegistrationScreen } from './src/screens'
 
 // Veiculos
-import { Carros, Motos } from './src/screens'
+import { Carros, Motos, Caminhões } from './src/screens'
 
 // Serviços
 import {
   Revisão_Motor, Revisão_Sistema_De_Transmissão, Alinhamento_e_Balanceamento, Troca_de_Oleo_e_Filtros,
-  Troca_De_Amortecedor, Troca_De_Escapamento, Troca_De_Pneus, Troca_Disco_De_Freio
+  Troca_De_Amortecedor, Troca_De_Escapamento, Troca_De_Pneus, Troca_Disco_De_Freio,
+  Leitura_Modulo_ECU, Lubrificação_Quinta_Roda, Polimentos_Rodas_e_Tanque, Troca_Lona_de_Freios
 } from './src/screens'
 
 import { LogBox } from 'react-native';
-import { Tab } from 'react-native-elements';
 LogBox.ignoreAllLogs();
 
 const Stack = createStackNavigator();
@@ -42,6 +42,11 @@ export default function App() {
         <Stack.Screen name="Troca_De_Pneus" component={Troca_De_Pneus} />
         <Stack.Screen name="Troca_Disco_De_Freio" component={Troca_Disco_De_Freio} />
 
+        <Stack.Screen name="Caminhões" component={Caminhões} />
+        <Stack.Screen name="Leitura_Modulo_ECU" component={Leitura_Modulo_ECU} />
+        <Stack.Screen name="Lubrificação_Quinta_Roda" component={Lubrificação_Quinta_Roda} />
+        <Stack.Screen name="Polimentos_Rodas_e_Tanque" component={Polimentos_Rodas_e_Tanque} />
+        <Stack.Screen name="Troca_Lona_de_Freios" component={Troca_Lona_de_Freios} />
 
       </Stack.Navigator>
     </NavigationContainer>

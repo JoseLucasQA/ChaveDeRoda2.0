@@ -8,6 +8,7 @@ export { default as Dashboard } from './Dashboard/Dashboard'
 // Veiculos
 export { default as Carros } from './vehicles/Carros'
 export { default as Motos } from './vehicles/Motos'
+export { default as Caminhões } from './vehicles/Caminhões'
 
 // Serviços Carros
 export { default as Revisão_Motor } from './services/cars/Revisão_Motor'
@@ -22,7 +23,7 @@ export { default as Troca_De_Pneus } from './services/bikes/Troca_De_Pneus'
 export { default as Troca_Disco_De_Freio } from './services/bikes/Troca_Disco_De_Freio'
 
 // Serviços Caminhões
-export { default as Leitura_Modulo_ECU } from './services/bikes/Leitura_Modulo_ECU'
-export { default as Lubrificação_Quinta_Roda } from './services/bikes/Lubrificação_Quinta_Roda'
-export { default as Polimentos_Rodas_e_Tanque } from './services/bikes/Polimentos_Rodas_e_Tanque'
-export { default as Troca_Lona_de_Freios } from './services/bikes/Troca_Lona_de_Freios'
+export { default as Leitura_Modulo_ECU } from './services/trucks/Leitura_Modulo_ECU'
+export { default as Lubrificação_Quinta_Roda } from './services/trucks/Lubrificação_Quinta_Roda'
+export { default as Polimentos_Rodas_e_Tanque } from './services/trucks/Polimentos_Rodas_e_Tanque'
+export { default as Troca_Lona_de_Freios } from './services/trucks/Troca_Lona_de_Freios'
