@@ -35,7 +35,7 @@ export default function Carros({ navigation }) {
 
         if (!reports) {
             return Alert.alert(
-                "Favor preencher o campo de Elogios e Reclamções"
+                "Favor preencher o campo de Elogios e Reclamações"
             )
         }
 
