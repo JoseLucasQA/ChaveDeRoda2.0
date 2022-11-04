@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, ScrollView } from 'react-native';
 import { Appbar, Card, Text } from 'react-native-paper';
-import { firebase } from '../../firebase/config'
 
 export default function Dashboard({ navigation }) {
     const carServices = () => {
@@ -30,15 +29,6 @@ export default function Dashboard({ navigation }) {
 
     const map = () => {
         navigation.navigate('Mapa')
-    }
-
-    const getReports = async () => {
-        let query = firebase.firestore().collection('reports').limit(5);
-        let snapshop = await query.get();
-
-        let reports = snapshop.docs.map(doc => doc.data())
-
-        return console.log(reports[0].report)
     }
 
     return (

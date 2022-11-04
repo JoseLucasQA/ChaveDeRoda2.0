@@ -80,7 +80,7 @@ export default function Carros({ navigation }) {
 
                 <TouchableOpacity onPress={Alinhamento_e_Balanceamento}>
                     <Card.Title
-                        title="Alinhamento + Balançeamento"
+                        title="Alinhamento + Balanceamento"
                         subtitle="Preço R$200,00"
                         left={(props) => <Avatar.Icon {...props} icon="wrench" />}
                         onPress={() => { }} />
