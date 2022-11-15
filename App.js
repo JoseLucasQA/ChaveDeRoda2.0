@@ -30,9 +30,9 @@ export default function App() {
         <Stack.Screen name="Registration" component={RegistrationScreen} />
 
         <Stack.Screen name="Dashboard" component={Dashboard} />
-        {/* <Stack.Screen name="Agendamentos" component={Agendamentos} /> */}
-        {/* <Stack.Screen name="Avaliações" component={Avaliações} /> */}
-        {/* <Stack.Screen name="Mapa" component={Mapa} /> */}
+        <Stack.Screen name="Agendamentos" component={Agendamentos} />
+        <Stack.Screen name="Avaliações" component={Avaliações} />
+        <Stack.Screen name="Mapa" component={Mapa} />
 
         <Stack.Screen name="Carros" component={Carros} />
         <Stack.Screen name="Revisão_Motor" component={Revisão_Motor} />
