@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
 // Telas Principais
-import { LoginScreen, Dashboard, RegistrationScreen, Agendamentos, Avaliações, Mapa } from './src/screens'
+import { LoginScreen, Dashboard, RegistrationScreen, Agendamentos, Avaliações } from './src/screens'
 
 // Veiculos
 import { Carros, Motos, Caminhões, Bicicletas } from './src/screens'
@@ -32,7 +32,6 @@ export default function App() {
         <Stack.Screen name="Dashboard" component={Dashboard} />
         <Stack.Screen name="Agendamentos" component={Agendamentos} />
         <Stack.Screen name="Avaliações" component={Avaliações} />
-        <Stack.Screen name="Mapa" component={Mapa} />
 
         <Stack.Screen name="Carros" component={Carros} />
         <Stack.Screen name="Revisão_Motor" component={Revisão_Motor} />

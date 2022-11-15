@@ -6,6 +6,7 @@ import firebase from "firebase";
 import { useState } from 'react';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import moment from "moment";
+import { AirbnbRating } from 'react-native-ratings';
 
 export default function Bicicletas({ navigation }) {
 
@@ -104,6 +105,15 @@ export default function Bicicletas({ navigation }) {
                     onChangeText={(text) => setreports(text)}
                     underlineColorAndroid="transparent"
                     autoCapitalize="none"
+                />
+
+                <AirbnbRating
+                    count={5}
+                    reviews={["Péssimo", "Ruim", "Bom", "Ótimo", "Excelente"]}
+                    defaultRating={5}
+                    size={20}
+                    selectedColor='#6959CD'
+                    reviewColor='#483D8B'
                 />
 
                 <FAB
