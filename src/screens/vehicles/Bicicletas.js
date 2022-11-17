@@ -6,7 +6,7 @@ import firebase from "firebase";
 import { useState } from 'react';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import moment from "moment";
-import { AirbnbRating } from 'react-native-ratings';
+import { AirbnbRating, Rating } from 'react-native-ratings';
 
 export default function Bicicletas({ navigation }) {
 
@@ -31,6 +31,12 @@ export default function Bicicletas({ navigation }) {
     const userEmail = firebase.auth().currentUser.email;
 
     const [reports, setreports] = useState('')
+    const [ratingSelect, setRating] = useState('')
+
+    function ratingCompleted(rating) {
+        console.log("Nota: " + rating)
+        setRating(rating);
+    }
 
     const saveReports = () => {
 
@@ -47,7 +53,8 @@ export default function Bicicletas({ navigation }) {
                     email: userEmail,
                     report: reports,
                     vehicle: 'bicycles',
-                    date: (moment(new Date).format("DD-MM-YYYY, HH:MM"))
+                    date: (moment(new Date).format("DD-MM-YYYY, HH:MM")),
+                    rating: ratingSelect
                 }),
                 Alert.alert(
                     "Obrigado por avaliar nossos serviços, estaremos buscando sempre o melhor para você!"
@@ -108,10 +115,10 @@ export default function Bicicletas({ navigation }) {
                 />
 
                 <AirbnbRating
+                    onFinishRating={ratingCompleted}
                     count={5}
                     reviews={["Péssimo", "Ruim", "Bom", "Ótimo", "Excelente"]}
-                    defaultRating={5}
-                    size={20}
+                    reviewSize='25'
                     selectedColor='#6959CD'
                     reviewColor='#483D8B'
                 />
