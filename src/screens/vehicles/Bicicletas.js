@@ -40,13 +40,13 @@ export default function Bicicletas({ navigation }) {
 
     const saveReports = () => {
 
-        if (!reports) {
+        if (!reports && !ratingSelect) {
             return Alert.alert(
                 "Favor preencher o campo de Elogios e Reclamções"
             )
         }
 
-        if (reports) {
+        if (reports || ratingSelect) {
             return (
                 firebase.firestore().collection('reports').doc().set({
                     userID: userID,
@@ -121,6 +121,7 @@ export default function Bicicletas({ navigation }) {
                     reviewSize='25'
                     selectedColor='#6959CD'
                     reviewColor='#483D8B'
+                    defaultRating={0}
                 />
 
                 <FAB

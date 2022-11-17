@@ -40,13 +40,13 @@ export default function Carros({ navigation }) {
 
     const saveReports = () => {
 
-        if (!reports) {
+        if (!reports && !ratingSelect) {
             return Alert.alert(
                 "Favor preencher o campo de Elogios e Reclamações"
             )
         }
 
-        if (reports) {
+        if (reports || ratingSelect) {
             return (
                 firebase.firestore().collection('reports').doc().set({
                     userID: userID,
@@ -119,6 +119,7 @@ export default function Carros({ navigation }) {
                     count={5}
                     reviews={["Péssimo", "Ruim", "Bom", "Ótimo", "Excelente"]}
                     reviewSize='25'
+                    defaultRating={0}
                     selectedColor='#6959CD'
                     reviewColor='#483D8B'
                 />
