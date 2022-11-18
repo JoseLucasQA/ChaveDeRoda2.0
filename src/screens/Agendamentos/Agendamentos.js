@@ -89,6 +89,47 @@ export default function Agendamentos({ navigation }) {
         )
     }
 
+    const [priceTruck, setPriceTruck] = useState('');
+    const [serviceTruck, setServiceTruck] = useState('');
+    const [dateTruck, setDateTruck] = useState('');
+    const [docIdTruck, setDocIdTruck] = useState('');
+
+    async function getSchedulesTrucks() {
+
+        const idUser = firebase.auth().currentUser.uid;
+        const query = await firebase.firestore().
+            collection('schedules').
+            where('userID', '==', idUser).
+            where('status', '==', 'Em Aberto').
+            where('vehicle', '==', 'truck').
+            limit(1).
+            get();
+
+        query.forEach(doc => {
+            console.log(doc.id, '=>', doc.data());
+            setPriceTruck('Valor R$:' + doc.data().price)
+            setServiceTruck('Serviço: ' + doc.data().service)
+            setDateTruck('Data/Hora: ' + doc.data().startServiceTime)
+            setDocIdTruck(doc.id)
+        });
+    }
+
+    getSchedulesTrucks()
+
+    async function deleteScheduleTruck() {
+
+        return (
+            await firebase.firestore().
+                collection('schedules').
+                doc(docIdTruck).
+                delete(),
+            Alert.alert(
+                "Agendamento cancelado com sucesso!",
+            ),
+            navigation.navigate('Dashboard')
+        )
+    }
+
     return (
         <ScrollView>
             <List.AccordionGroup>
@@ -119,6 +160,21 @@ export default function Agendamentos({ navigation }) {
                         icon="calendar-arrow-left"
                         style={styles.fab}
                         onPress={deleteScheduleBike}
+                    />
+                </List.Accordion>
+
+                <List.Accordion
+                    title="Caminhão"
+                    id="3"
+                    left={props => <List.Icon {...props} icon="truck" />}>
+                    <List.Item title={priceTruck} />
+                    <List.Item title={serviceTruck} />
+                    <List.Item title={dateTruck} />
+                    <FAB
+                        label="Cancelar Agendamento"
+                        icon="calendar-arrow-left"
+                        style={styles.fab}
+                        onPress={deleteScheduleTruck}
                     />
                 </List.Accordion>
 
