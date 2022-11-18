@@ -10,7 +10,7 @@ export default function Agendamentos({ navigation }) {
     const [priceCar, setPriceCar] = useState('');
     const [serviceCar, setServiceCar] = useState('');
     const [dateCar, setDateCar] = useState('');
-    const [docIdCar, setdocIdCar] = useState('');
+    const [docIdCar, setDocIdCar] = useState('');
 
     async function getSchedulesCars() {
 
@@ -28,7 +28,7 @@ export default function Agendamentos({ navigation }) {
             setPriceCar('Valor R$:' + doc.data().price)
             setServiceCar('Serviço: ' + doc.data().service)
             setDateCar('Data/Hora: ' + doc.data().startServiceTime)
-            setdocIdCar(doc.id)
+            setDocIdCar(doc.id)
         });
     }
 
