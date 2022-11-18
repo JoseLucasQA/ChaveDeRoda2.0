@@ -56,7 +56,7 @@ export default function Dashboard({ navigation }) {
             </Card>
 
             <Appbar.Header>
-                <Appbar.Content title="Avaliações" />
+                <Appbar.Content title="Avaliações dos Usuários" />
             </Appbar.Header>
 
             <Card onPress={reports}>
