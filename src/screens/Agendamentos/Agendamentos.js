@@ -20,6 +20,7 @@ export default function Agendamentos({ navigation }) {
             where('userID', '==', idUser).
             where('status', '==', 'Em Aberto').
             where('vehicle', '==', 'car').
+            limit(1).
             get();
 
         query.forEach(doc => {
