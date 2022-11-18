@@ -33,12 +33,6 @@ export default function Alinhamento_e_Balanceamento({ navigation }) {
             )
         }
 
-        if (schedules.vehicle, '==', 'car') {
-            return Alert.alert(
-                'Já existem serviços para carro agendados.'
-            )
-        }
-
         return (
             firebase.firestore().collection('schedules').doc().set({
                 userID: idUser,
