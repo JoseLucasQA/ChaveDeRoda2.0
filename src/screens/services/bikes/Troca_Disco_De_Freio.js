@@ -73,6 +73,7 @@ export default function Troca_Disco_De_Freio({ navigation }) {
                     locale='pt-BR'
                     minuteInterval={30}
                     themeVariant="light"
+                    minimumDate={new Date()}
                 />
 
                 <Text style={styles.infoEndTimeService} >

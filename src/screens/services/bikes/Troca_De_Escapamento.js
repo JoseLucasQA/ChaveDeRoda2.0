@@ -73,6 +73,7 @@ export default function Troca_De_Escapamento({ navigation }) {
                     locale='pt-BR'
                     minuteInterval={30}
                     themeVariant="light"
+                    minimumDate={new Date()}
                 />
 
                 <Text style={styles.infoEndTimeService} >
