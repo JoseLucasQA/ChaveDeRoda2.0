@@ -73,6 +73,7 @@ export default function Troca_Lona_de_Freios({ navigation }) {
                     locale='pt-BR'
                     minuteInterval={30}
                     themeVariant="light"
+                    minimumDate={new Date()}
                 />
 
                 <Text style={styles.infoEndTimeService} >
