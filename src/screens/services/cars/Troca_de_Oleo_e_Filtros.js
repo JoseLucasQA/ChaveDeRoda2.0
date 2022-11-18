@@ -33,6 +33,12 @@ export default function Troca_de_Oleo_e_Filtros({ navigation }) {
             )
         }
 
+        if (schedules.vehicle, '==', 'car') {
+            return Alert.alert(
+                'Já existem serviços para carro agendados.'
+            )
+        }
+
         return (
             firebase.firestore().collection('schedules').doc().set({
                 userID: idUser,
