@@ -1,62 +1,90 @@
 import * as React from 'react';
-import { DataTable } from 'react-native-paper';
 import firebase from "firebase";
 import { useState } from 'react';
+import { StyleSheet, Alert } from "react-native";
 import { ScrollView } from 'react-native-gesture-handler';
+import { List, FAB } from 'react-native-paper';
 
-export default async function Agendamentos() {
+export default function Agendamentos({ navigation }) {
 
-    const idUser = firebase.auth().currentUser.uid;
-    const [service, setService] = useState('');
-    const [vehicle, setVehicle] = useState('');
-    const [price, setPrice] = useState('');
+    const [priceCar, setPriceCar] = useState('');
+    const [serviceCar, setServiceCar] = useState('');
+    const [dateCar, setDateCar] = useState('');
+    const [docIdCar, setdocIdCar] = useState('');
 
-    let query = await firebase.firestore().
-        collection('schedules').
-        where('userID', '==', idUser).
-        where('status', '==', 'Em Aberto').
-        get();
+    async function getSchedulesCars() {
 
-    let schedules = query.docs.map(doc => doc.data())
+        const idUser = firebase.auth().currentUser.uid;
+        const query = await firebase.firestore().
+            collection('schedules').
+            where('userID', '==', idUser).
+            where('status', '==', 'Em Aberto').
+            where('vehicle', '==', 'car').
+            get();
 
-    console.log(schedules)
-    const numberOfItemsPerPageList = [2, 3, 4];
-    const [page, setPage] = React.useState(0);
-    const [numberOfItemsPerPage, onItemsPerPageChange] = React.useState(numberOfItemsPerPageList[0]);
-    const from = page * numberOfItemsPerPage;
-    const to = Math.min((page + 1) * numberOfItemsPerPage, schedules.length);
+        query.forEach(doc => {
+            console.log(doc.id, '=>', doc.data());
+            setPriceCar('Valor R$:' + doc.data().price)
+            setServiceCar('Serviço: ' + doc.data().service)
+            setDateCar('Data/Hora: ' + doc.data().startServiceTime)
+            setdocIdCar(doc.id)
+        });
+    }
 
-    React.useEffect(() => {
-        setPage(0);
-    }, [numberOfItemsPerPage]);
+    async function deleteScheduleCar() {
 
-    React.useEffect(() => {
-        setPage(0);
-    }, [numberOfItemsPerPage]);
+        return (
+            await firebase.firestore().
+                collection('schedules').
+                doc(docIdCar).
+                delete(),
+            Alert.alert(
+                "Agendamento cancelado com sucesso!",
+            ),
+            navigation.navigate('Dashboard')
+        )
+    }
 
+    getSchedulesCars()
 
 
     return (
         <ScrollView>
+            <List.AccordionGroup>
+                <List.Accordion
+                    title="Carro"
+                    id="1"
+                    left={props => <List.Icon {...props} icon="car" />}>
+                    <List.Item title={priceCar} />
+                    <List.Item title={serviceCar} />
+                    <List.Item title={dateCar} />
+                    <FAB
+                        label="Cancelar Agendamento"
+                        icon="calendar-arrow-left"
+                        style={styles.fab}
+                        onPress={deleteScheduleCar}
+                    />
+                </List.Accordion>
 
-            <DataTable>
-                <DataTable.Pagination
-                    page={page}
-                    numberOfPages={Math.ceil(schedules.length / numberOfItemsPerPage)}
-                    onPageChange={page => setPage(page)}
-                    label={`${from + 1}-${to} of ${schedules.length}`}
-                    showFastPaginationControls
-                    numberOfItemsPerPageList={numberOfItemsPerPageList}
-                    numberOfItemsPerPage={numberOfItemsPerPage}
-                    onItemsPerPageChange={onItemsPerPageChange}
-                    selectPageDropdownLabel={'Rows per page'}
-                />
-            </DataTable>
 
 
-
+                <List.Accordion title="Moto" id="2">
+                    <List.Item title="Item 2" />
+                </List.Accordion>
+                <List.Accordion title="Caminhão" id="3">
+                    <List.Item title="Item 2" />
+                </List.Accordion>
+                <List.Accordion title="Bicicleta" id="4">
+                    <List.Item title="Item 2" />
+                </List.Accordion>
+            </List.AccordionGroup>
         </ScrollView>
-
     )
-
 }
+
+const styles = StyleSheet.create({
+    fab: {
+        margin: 15,
+        backgroundColor: 'red'
+    }
+});
