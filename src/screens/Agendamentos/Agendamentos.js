@@ -48,6 +48,46 @@ export default function Agendamentos({ navigation }) {
 
     getSchedulesCars()
 
+    const [priceBike, setPriceBike] = useState('');
+    const [serviceBike, setServiceBike] = useState('');
+    const [dateBike, setDateBike] = useState('');
+    const [docIdBike, setDocIdBike] = useState('');
+
+    async function getSchedulesBikes() {
+
+        const idUser = firebase.auth().currentUser.uid;
+        const query = await firebase.firestore().
+            collection('schedules').
+            where('userID', '==', idUser).
+            where('status', '==', 'Em Aberto').
+            where('vehicle', '==', 'bike').
+            limit(1).
+            get();
+
+        query.forEach(doc => {
+            console.log(doc.id, '=>', doc.data());
+            setPriceBike('Valor R$:' + doc.data().price)
+            setServiceBike('Serviço: ' + doc.data().service)
+            setDateBike('Data/Hora: ' + doc.data().startServiceTime)
+            setDocIdBike(doc.id)
+        });
+    }
+
+    getSchedulesBikes()
+
+    async function deleteScheduleBike() {
+
+        return (
+            await firebase.firestore().
+                collection('schedules').
+                doc(docIdBike).
+                delete(),
+            Alert.alert(
+                "Agendamento cancelado com sucesso!",
+            ),
+            navigation.navigate('Dashboard')
+        )
+    }
 
     return (
         <ScrollView>
@@ -67,17 +107,21 @@ export default function Agendamentos({ navigation }) {
                     />
                 </List.Accordion>
 
+                <List.Accordion
+                    title="Moto"
+                    id="2"
+                    left={props => <List.Icon {...props} icon="motorbike" />}>
+                    <List.Item title={priceBike} />
+                    <List.Item title={serviceBike} />
+                    <List.Item title={dateBike} />
+                    <FAB
+                        label="Cancelar Agendamento"
+                        icon="calendar-arrow-left"
+                        style={styles.fab}
+                        onPress={deleteScheduleBike}
+                    />
+                </List.Accordion>
 
-
-                <List.Accordion title="Moto" id="2">
-                    <List.Item title="Item 2" />
-                </List.Accordion>
-                <List.Accordion title="Caminhão" id="3">
-                    <List.Item title="Item 2" />
-                </List.Accordion>
-                <List.Accordion title="Bicicleta" id="4">
-                    <List.Item title="Item 2" />
-                </List.Accordion>
             </List.AccordionGroup>
         </ScrollView>
     )
